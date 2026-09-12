@@ -5,6 +5,7 @@ COPY services/p2/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY services ./services
 
+RUN mkdir -p /data
 ENV P2_DATABASE_PATH=/data/p2_compliance.db
 EXPOSE 8001
-CMD ["uvicorn", "services.p2.main:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["sh", "-c", "exec uvicorn services.p2.main:app --host 0.0.0.0 --port ${PORT:-8001}"]
