@@ -37,6 +37,25 @@ Project: BLACK PEARL — FS-2602
 - PostgreSQL: not implemented or tested.
 - Public deployment: not performed.
 - Human review: Not yet performed.
+
+## Docker Verification Attempt
+
+- Date: 2026-09-12
+- AI tool: GitHub Copilot
+- Component: Existing Docker Compose verification
+- Purpose: Verify the unchanged real P1, P2, and gateway Docker deployment.
+- What was actually verified: Docker CLI version `29.7.2` and Compose
+  `v5.5.1` were available. `docker compose config` rendered the three-service
+  configuration successfully, including the named `p2_data` volume.
+- What was not verified: `docker compose build` failed before building because
+  the Docker Desktop Linux engine returned API HTTP 500; `docker desktop status`
+  reported `stopped`. No containers were started, so container health,
+  container decisions, volume persistence, Docker audit verification, and
+  Docker replay were not claimed.
+- Files modified: `INTEGRATION_STATUS.md`,
+  `FINAL_SYSTEM_INTEGRATION_REPORT.md`, and `AI_LEDGER.md`.
+- Application behavior: Not modified.
+- Human review: Not yet performed.
 - Testing: Not run because Python was not available during the initial scaffolding session.
 
 ## Entry 002

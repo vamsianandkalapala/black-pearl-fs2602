@@ -26,8 +26,8 @@
 
 - A PostgreSQL adapter or migration system.
 - A public deployment provider or HTTPS URL.
-- Docker image builds and Compose startup, because Docker is unavailable on the
-  verification machine.
+- Docker image builds and Compose startup, because the Docker Desktop Linux
+  engine is stopped/unresponsive in this environment.
 - PostgreSQL production deployment.
 
 ## Honest boundary
@@ -56,6 +56,11 @@ unverified.
 - Repeated request: identical decision ID and snapshot hash.
 - P2 restart with retained database: health HTTP 200, audit `VALID`, replay
   `MATCH`.
+- Docker CLI verification: Docker version `29.7.2` and Compose `v5.5.1` are
+  installed; `docker compose config` rendered successfully.
+- Docker engine verification: `docker desktop status` reported `stopped`.
+  `docker compose build` failed before building with a Docker Desktop Linux
+  engine API 500, and no containers were started.
 - Docker: unavailable; build and Compose startup are unverified.
 - PostgreSQL: not implemented or tested.
 - Public deployment: not performed.

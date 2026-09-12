@@ -187,6 +187,9 @@ snapshot hash.
 
 Results: **76 passed, 2 warnings** and compileall exit code 0.
 
-Docker was unavailable on the verification machine, so Docker image builds and
-Compose startup were not claimed. PostgreSQL and public deployment were not
-implemented or tested in this phase.
+Docker CLI verification: Docker `29.7.2` and Compose `v5.5.1` are installed,
+and `docker compose config` rendered successfully. Docker Desktop then
+reported its Linux engine as `stopped`; `docker compose build` failed before
+building with a Docker Desktop Linux-engine API 500. No containers were
+started, so Docker image/runtime results are not claimed. PostgreSQL and public
+deployment were not implemented or tested in this phase.
