@@ -1,0 +1,33 @@
+[
+  {
+    "case_id": "approved-complete",
+    "applicant": {
+      "applicant_id": "demo-approved",
+      "monthly_income": 2500,
+      "monthly_rent": 1000,
+      "bank_income": 34000,
+      "bank_cashflow": 30000,
+      "gig_income": 7000,
+      "repayment_history": 7,
+      "utility_payment_history": 9,
+      "telecom_payment_history": 8
+    }
+  },
+  {
+    "case_id": "thin-file-missing-sources",
+    "applicant": {
+      "applicant_id": "demo-thin-file",
+      "monthly_income": 1500,
+      "monthly_rent": 1000
+    }
+  },
+  {
+    "case_id": "unicode-applicant",
+    "applicant": {
+      "applicant_id": "demo-café-借款人",
+      "monthly_income": 2200,
+      "monthly_rent": 900,
+      "repayment_history": 8
+    }
+  }
+]

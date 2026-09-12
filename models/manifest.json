@@ -1,0 +1,27 @@
+{
+  "models": [
+    {
+      "artifact_path": "models/model_v1.joblib",
+      "change_reason": "initial model metadata refresh for HALF DEBUG",
+      "feature_registry_sha256": "4edcb95d7710fbdd243a57510d4f222b7d83dc96adb8efe496338b735ca79d1f",
+      "metadata_content_sha256": "28bb7aebbed0d79089fafdebf321c647814c292abcd00b3907605dee4f82ab5e",
+      "metadata_path": "models/model_v1_metadata.json",
+      "model_artifact_sha256": "11a587faee279c5a6c19517defbe2c34f081bec0a24ad474521438a8a491ee3a",
+      "model_version": "v1",
+      "parent_model_version": "",
+      "training_data_sha256": "7d585b074525019fdd63af4765e56aaf9c50d40e02d3522c2efb026c51b80470"
+    },
+    {
+      "artifact_path": "C:\\Users\\Dell\\.copilot\\chats\\2026-09-12\\328-lines-a8379474\\black-pearl-fs2602\\models\\model_v2.joblib",
+      "change_reason": "H+8 prohibition of repayment_history",
+      "feature_registry_sha256": "038bd4edcd2dc5a57284e62f37e4d7d7f11a55539cf88d71658e0e81aa60f679",
+      "metadata_content_sha256": "526bb534fb779c9405eada163afba8e57bd85fa048470bf3fdc79cd22f0158ed",
+      "metadata_path": "C:\\Users\\Dell\\.copilot\\chats\\2026-09-12\\328-lines-a8379474\\black-pearl-fs2602\\models\\model_v2_metadata.json",
+      "model_artifact_sha256": "230d86b0a1e169c22e940b49820dc6aa57e5e5e03c6376b3ffe9b2635193a444",
+      "model_version": "v2",
+      "parent_model_version": "v1",
+      "prohibited_feature": "repayment_history",
+      "training_data_sha256": "7d585b074525019fdd63af4765e56aaf9c50d40e02d3522c2efb026c51b80470"
+    }
+  ]
+}

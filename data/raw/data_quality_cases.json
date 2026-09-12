@@ -1,0 +1,46 @@
+[
+  {
+    "case_id": "normal",
+    "description": "Normal alternate-data record",
+    "data": {
+      "monthly_income": 30000,
+      "bank_income": 28000,
+      "gig_income": 2000,
+      "monthly_rent": 10000
+    }
+  },
+  {
+    "case_id": "missing_alternate_data",
+    "description": "Thin-file record with missing sources",
+    "data": {
+      "monthly_income": 30000,
+      "monthly_rent": 10000
+    }
+  },
+  {
+    "case_id": "conflicting_sources",
+    "description": "Source totals differ materially from declared income",
+    "data": {
+      "monthly_income": 30000,
+      "bank_income": 30000,
+      "gig_income": 30000,
+      "monthly_rent": 10000
+    }
+  },
+  {
+    "case_id": "suspicious_plausible_value",
+    "description": "Numerically valid but implausibly high income",
+    "data": {
+      "monthly_income": 2000000,
+      "monthly_rent": 10000
+    }
+  },
+  {
+    "case_id": "malformed_value",
+    "description": "Malformed numeric value",
+    "data": {
+      "monthly_income": "unknown",
+      "monthly_rent": 10000
+    }
+  }
+]

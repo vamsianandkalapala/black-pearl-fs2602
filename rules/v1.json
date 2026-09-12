@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "effective_date": "2026-09-12",
+  "rules": [
+    {
+      "rule_id": "v1-score-approve",
+      "rulebook_version": "v1",
+      "effective_from": "2026-09-12",
+      "effective_to": null,
+      "priority": 10,
+      "description": "Approve scores at or above 50.",
+      "condition": {"field": "score", "operator": "gte", "value": 50},
+      "action": "APPROVED",
+      "reason": "score_meets_v1_threshold",
+      "active": true
+    },
+    {
+      "rule_id": "v1-score-decline",
+      "rulebook_version": "v1",
+      "effective_from": "2026-09-12",
+      "effective_to": null,
+      "priority": 20,
+      "description": "Decline scores below 50.",
+      "condition": {"field": "score", "operator": "lt", "value": 50},
+      "action": "DECLINED",
+      "reason": "score_below_v1_threshold",
+      "active": true
+    }
+  ]
+}

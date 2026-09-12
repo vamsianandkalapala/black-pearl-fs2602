@@ -1,0 +1,31 @@
+{
+  "request": {
+    "applicant": {
+      "applicant_id": "fixture-001",
+      "monthly_income": 2500,
+      "monthly_rent": 1000,
+      "bank_income": 34000,
+      "bank_cashflow": 30000,
+      "gig_income": 7000,
+      "repayment_history": 7,
+      "utility_payment_history": 9,
+      "telecom_payment_history": 8
+    },
+    "rulebook_version": "v1",
+    "decision_date": "2026-09-12",
+    "language": "en"
+  },
+  "expected": {
+    "decision": "APPROVED",
+    "score": 98,
+    "probability": 0.983149626460735,
+    "model_version": "v1",
+    "model_artifact_sha256": "11a587faee279c5a6c19517defbe2c34f081bec0a24ad474521438a8a491ee3a",
+    "rulebook_version": "v1",
+    "rulebook_sha256": "825cc60dd3fab54c00f151e2bbb5f79f4fcce35c3a88e17368c2959cf8e062a9",
+    "feature_registry_version": "v1",
+    "feature_registry_hash": "4edcb95d7710fbdd243a57510d4f222b7d83dc96adb8efe496338b735ca79d1f",
+    "snapshot_hash": "8c0545f7ae6e751c93f2d224dacf972de5a41fdb52d7783fabeb2a79f2acdb0d",
+    "canonical_decision_sha256": "89a49b98d89ccac8084d74032f4b7c0b757ef7f2f629685e8e5b15d1c6f0f363"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "model_version": "v1",
+  "model_type": "LogisticRegression",
+  "feature_names": [
+    "income_to_rent_ratio",
+    "bank_income",
+    "bank_cashflow",
+    "gig_income",
+    "repayment_history",
+    "utility_payment_history",
+    "telecom_payment_history"
+  ],
+  "feature_registry_version": "v1",
+  "feature_registry_sha256": "4edcb95d7710fbdd243a57510d4f222b7d83dc96adb8efe496338b735ca79d1f",
+  "preprocessing": "median imputation fitted on training data, then standard scaling",
+  "training_data_identifier": "data/raw/training_data.csv",
+  "training_data_sha256": "7d585b074525019fdd63af4765e56aaf9c50d40e02d3522c2efb026c51b80470",
+  "model_artifact_sha256": "11a587faee279c5a6c19517defbe2c34f081bec0a24ad474521438a8a491ee3a",
+  "parent_model_version": "",
+  "change_reason": "initial model metadata refresh for HALF DEBUG",
+  "training_configuration": {
+    "random_state": 42,
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "target": "historical repayment outcome; 1 means positive outcome",
+  "data_status": "SYNTHETIC prototype data; not real applicant performance data",
+  "python_version": "3.13.15",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "fastapi": "0.141.1",
+    "pydantic": "2.13.5",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "git_commit": "unavailable",
+  "creation_timestamp": 1789204973465324400,
+  "top_three_features": [
+    {
+      "feature_name": "repayment_history",
+      "importance": 0.6010490307870557,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    },
+    {
+      "feature_name": "utility_payment_history",
+      "importance": 0.5952843968059227,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    },
+    {
+      "feature_name": "income_to_rent_ratio",
+      "importance": 0.5465401455428421,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    }
+  ],
+  "metadata_content_sha256": "28bb7aebbed0d79089fafdebf321c647814c292abcd00b3907605dee4f82ab5e"
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLACK PEARL Decision Demo</title>
+</head>
+<body>
+  <h1>BLACK PEARL</h1>
+  <p>Decisions come from P1. Audit and replay results come from P2.</p>
+  <form id="decision-form">
+    <label>Applicant ID <input name="applicant_id" value="demo-web"></label><br>
+    <label>Monthly income <input name="monthly_income" type="number" value="2500"></label><br>
+    <label>Monthly rent <input name="monthly_rent" type="number" value="1000"></label><br>
+    <button type="submit">Evaluate with backend</button>
+  </form>
+  <pre id="result">No decision submitted.</pre>
+  <script>
+    document.getElementById("decision-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const values = new FormData(event.target);
+      const payload = {
+        applicant: {
+          applicant_id: values.get("applicant_id"),
+          monthly_income: Number(values.get("monthly_income")),
+          monthly_rent: Number(values.get("monthly_rent"))
+        },
+        rulebook_version: "v1",
+        decision_date: "2026-09-12",
+        language: "en"
+      };
+      const output = document.getElementById("result");
+      try {
+        const response = await fetch("/decision", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(payload)
+        });
+        output.textContent = JSON.stringify(await response.json(), null, 2);
+      } catch (_) {
+        output.textContent = "Backend unavailable. No local decision was calculated.";
+      }
+    });
+  </script>
+</body>
+</html>

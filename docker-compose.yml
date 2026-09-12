@@ -1,0 +1,50 @@
+services:
+  p1:
+    build:
+      context: .
+      dockerfile: Dockerfile.p1
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  p2:
+    build:
+      context: .
+      dockerfile: Dockerfile.p2
+    environment:
+      P2_DATABASE_PATH: /data/p2_compliance.db
+      P1_BASE_URL: http://p1:8000
+    expose:
+      - "8001"
+    volumes:
+      - p2_data:/data
+    depends_on:
+      p1:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    environment:
+      P1_BASE_URL: http://p1:8000
+      P2_BASE_URL: http://p2:8001
+    ports:
+      - "${GATEWAY_PORT:-8080}:8080"
+    depends_on:
+      p1:
+        condition: service_healthy
+      p2:
+        condition: service_healthy
+
+volumes:
+  p2_data:

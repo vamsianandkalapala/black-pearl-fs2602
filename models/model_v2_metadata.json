@@ -1,0 +1,57 @@
+{
+  "model_version": "v2",
+  "model_type": "LogisticRegression",
+  "feature_names": [
+    "income_to_rent_ratio",
+    "bank_income",
+    "bank_cashflow",
+    "gig_income",
+    "utility_payment_history",
+    "telecom_payment_history"
+  ],
+  "feature_registry_version": "h8-v2",
+  "feature_registry_sha256": "038bd4edcd2dc5a57284e62f37e4d7d7f11a55539cf88d71658e0e81aa60f679",
+  "preprocessing": "median imputation fitted on training data, then standard scaling",
+  "training_data_identifier": "data\\raw\\training_data.csv",
+  "training_data_sha256": "7d585b074525019fdd63af4765e56aaf9c50d40e02d3522c2efb026c51b80470",
+  "parent_model_version": "v1",
+  "change_reason": "H+8 prohibition of repayment_history",
+  "training_configuration": {
+    "random_state": 42,
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "target": "historical repayment outcome; 1 means positive outcome",
+  "data_status": "SYNTHETIC prototype data; not real applicant performance data",
+  "python_version": "3.13.15",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "fastapi": "0.141.1",
+    "pydantic": "2.13.5",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "git_commit": "unavailable",
+  "creation_timestamp": 1789204973465324400,
+  "top_three_features": [
+    {
+      "feature_name": "utility_payment_history",
+      "importance": 0.6775185750562088,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    },
+    {
+      "feature_name": "income_to_rent_ratio",
+      "importance": 0.6288406481959194,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    },
+    {
+      "feature_name": "bank_income",
+      "importance": 0.5966777591420237,
+      "importance_method": "absolute standardized Logistic Regression coefficient"
+    }
+  ],
+  "model_artifact_sha256": "230d86b0a1e169c22e940b49820dc6aa57e5e5e03c6376b3ffe9b2635193a444",
+  "metadata_content_sha256": "526bb534fb779c9405eada163afba8e57bd85fa048470bf3fdc79cd22f0158ed"
+}
