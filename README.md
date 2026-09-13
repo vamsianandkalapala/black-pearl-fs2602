@@ -269,3 +269,11 @@ Docker files are provided for P1, P2, and the gateway. Docker availability and
 build/startup remain deployment-dependent and must not be treated as verified
 until run on a machine with Docker. PostgreSQL is not implemented; SQLite is
 the verified local database backend.
+
+## Railway deployment
+
+Railway deployment uses separate P1, P2, and Gateway services. Only the
+Gateway receives a public domain; P1 and P2 remain private and are connected
+through the Gateway's `P1_BASE_URL` and `P2_BASE_URL` variables. The exact
+service, Dockerfile, private-network, health-check, and P2 volume settings are
+documented in `docs/RAILWAY_DEPLOYMENT.md`.
